@@ -4,7 +4,7 @@ import Link from "next/link"; //handles client-side navigation
 
 export async function generateMetadata() {
   return {
-    title: "jeff-schoe.dev: Blog",
+    title: "Blog",
   }
 }
 
