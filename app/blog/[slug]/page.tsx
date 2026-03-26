@@ -18,6 +18,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
   return  (
     <div>
+      <title>{post.title}</title>
       <h1>{post.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
     </div>
