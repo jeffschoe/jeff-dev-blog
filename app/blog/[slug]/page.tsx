@@ -2,8 +2,8 @@ import { markdownToHtml } from "@/lib/markdown";
 import { getAllPosts } from "@/lib/posts";
 import Link from "next/link"; 
 
-
-//sets title metadata on each page
+// generateMetadata is a special function Next.js automatically runs, no need to call it anywhere
+// overrides metadata on each page, currently only the title
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }>}) {
   const { slug } = await params; // destructuring
   const posts =  getAllPosts();
@@ -15,10 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: post.title,
+    title: `jeff-schoe.dev: ${post.title}`,
   }
-
-
 }
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -30,7 +28,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const posts =  getAllPosts();
   const post = posts.find((p) => p.slug === slug); //returns the first post where the post.slug === param.slug. slug = markdown file name, like: "my-first-post.md" → slug = "my-first-post"
   if (!post) {
-    return <div>Not found</div>;
+    return (
+      <div>Not found</div>
+    );
   }
 
   const htmlContent = await markdownToHtml(post.content);

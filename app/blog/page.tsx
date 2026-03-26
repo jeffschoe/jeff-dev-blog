@@ -2,14 +2,18 @@ import { getAllPosts } from "@/lib/posts";
 import Link from "next/link"; //handles client-side navigation
 
 
+export async function generateMetadata() {
+  return {
+    title: "jeff-schoe.dev: Blog",
+  }
+}
+
 //When someone visits /blog, this function runs.
 export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <div>
-      <title>Blog Posts</title>
-      
+    <div>      
       <h1 className="text-2xl font-bold mb-4">Blog</h1>
       {posts.map((post) =>(
         <div key={post.slug} className="mb-6 border-b pb-4">
@@ -29,13 +33,13 @@ export default function BlogPage() {
         Home
       </Link>
       <div>
-          <a 
-          href="https://github.com/jeffschoe"
-          className="mt-6 inline-block rounded-lg bg-black px-6 py-3 text-white dark:bg-white dark:text-black"
-          >
-            My Github
-          </a>
-        </div>
+        <a 
+        href="https://github.com/jeffschoe"
+        className="mt-6 inline-block rounded-lg bg-black px-6 py-3 text-white dark:bg-white dark:text-black"
+        >
+          My Github
+        </a>
+      </div>
     </div>
     
   );
