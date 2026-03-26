@@ -1,5 +1,6 @@
 import { markdownToHtml } from "@/lib/markdown";
 import { getAllPosts } from "@/lib/posts";
+import Link from "next/link"; 
 
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -22,6 +23,18 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <h1 className="text-2xl font-bold mb-4">{post.title}</h1>
       <p className="text-sm mb-4 text-gray-500">{post.date}</p>
       <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      <Link
+        href="/"
+        className="mt-6 inline-block rounded-lg bg-black px-6 py-3 text-white dark:bg-white dark:text-black"
+      >
+        Home
+      </Link>
+      <Link
+        href="/blog"
+        className="mt-6 inline-block rounded-lg bg-black px-6 py-3 text-white dark:bg-white dark:text-black"
+      >
+        Blog Posts
+      </Link>
     </div>
   );
 }

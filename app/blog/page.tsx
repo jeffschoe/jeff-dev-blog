@@ -22,6 +22,12 @@ export default function BlogPage() {
           </p>
         </div>
       ))}
+      <Link
+            href="/"
+            className="mt-6 inline-block rounded-lg bg-black px-6 py-3 text-white dark:bg-white dark:text-black"
+          >
+            Home
+          </Link>
     </div>
   );
 }
