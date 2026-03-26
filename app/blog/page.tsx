@@ -23,12 +23,21 @@ export default function BlogPage() {
         </div>
       ))}
       <Link
-            href="/"
-            className="mt-6 inline-block rounded-lg bg-black px-6 py-3 text-white dark:bg-white dark:text-black"
+        href="/"
+        className="mt-6 inline-block rounded-lg bg-black px-6 py-3 text-white dark:bg-white dark:text-black"
+      >
+        Home
+      </Link>
+      <div>
+          <a 
+          href="https://github.com/jeffschoe"
+          className="mt-6 inline-block rounded-lg bg-black px-6 py-3 text-white dark:bg-white dark:text-black"
           >
-            Home
-          </Link>
+            My Github
+          </a>
+        </div>
     </div>
+    
   );
 }
 

@@ -35,6 +35,14 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       >
         Blog Posts
       </Link>
+      <div>
+        <a 
+        href="https://github.com/jeffschoe"
+        className="mt-6 inline-block rounded-lg bg-black px-6 py-3 text-white dark:bg-white dark:text-black"
+        >
+          My Github
+        </a>
+      </div>
     </div>
   );
 }
