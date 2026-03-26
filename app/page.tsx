@@ -36,7 +36,7 @@ export default function Home() {
           </p>
         </div>
         <div>
-          <Link href="/blog">View my Blog</Link>
+          <Link href="/blog">View my Blog!</Link>
 
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
