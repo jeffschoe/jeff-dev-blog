@@ -8,7 +8,7 @@ export default function BlogPage() {
 
   return (
     <div>
-      <h1>Blog</h1>
+      <h1 className="text-3xl font-semibold">Blog</h1>
       {posts.map((post) =>(
         <div key={post.slug}>
           <Link href={`/blog/${post.slug}`}>
