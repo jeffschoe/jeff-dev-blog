@@ -24,6 +24,7 @@
 .DS_Store
 *.pem
 NOTES.md
+post-template.md
 
 # debug
 npm-debug.log*
